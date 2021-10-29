@@ -1,11 +1,11 @@
-
-
 import React from 'react';
+
+
 
 const MyOders = () => {
     return (
         <div>
-            This is form My order
+            <h1>This is form myOrders</h1>
         </div>
     );
 };

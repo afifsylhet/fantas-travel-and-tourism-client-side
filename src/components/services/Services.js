@@ -1,24 +1,37 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../utilities/useAuth'
 
 
 const Services = () => {
+    const { user } = useAuth();
+
+    const [myOrders, setMyOrders] = useState({})
     const [services, setServices] = useState([])
+    const [sId, setSId] = useState("")
 
     useEffect(() => {
         const url = "http://localhost:5000/services";
         fetch(url)
             .then(res => res.json())
             .then(data => setServices(data))
-    }, [services]);
+    }, []);
 
-    console.log(services)
+    console.log(sId)
+    const createObject = () => {
+
+    }
+    const newCollection = () => {
+        const hello = services.find(nService => nService._id === service._id)
+        setMyOrders(hello);
+    }
 
     return (
         <div>
             <div className="mx-3 pb-3">
                 {
-                    services.map(service => <div className="row mt-4 shadow-lg p-2" key={service.ObjectId}>
+                    services.map(service => <div className="row mt-4 shadow-lg p-2" key={service.ObjectId} >
+
                         <div className="col-lg-5 col-md-12 col-xs-12">
                             <img src={service.img_1} alt="" className="img-fluid" />
                         </div>
@@ -44,12 +57,13 @@ const Services = () => {
                                 <h5 className="text-success">Total Review : {service.rating_Count}</h5>
                                 <br />
                                 <div className="d-flex justify-content-center">
-                                    <button className="btn btn-success py-2 px-3  fs-5 w-100">Book This Package</button>
+                                    <Link to={`/myOrders/${service._id}`}>
+                                        <button className="btn btn-success py-2 px-3  fs-5 w-100">Book This Package</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     )
                 }
             </div>

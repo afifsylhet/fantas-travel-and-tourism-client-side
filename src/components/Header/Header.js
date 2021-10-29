@@ -1,10 +1,12 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../utilities/useAuth';
 import './Header.css'
 
 
 const Header = () => {
+    const { user, handleSignout } = useAuth();
     return (
         <div>
             <Navbar bg="dark" expand="lg">
@@ -36,8 +38,16 @@ const Header = () => {
                             <NavLink to="/addNewServices" className="nevuderline">
                                 <Nav.Link href="#action2" className="text-white nevtour">Add Services</Nav.Link>
                             </NavLink>
-
-                            <Button variant="outline-light">Login</Button>
+                            <div className="d-flex align-items-center text-white mx-2">
+                                {user.displayName}
+                            </div>
+                            {
+                                user.displayName ?
+                                    <Button onClick={handleSignout} variant="outline-light">Logout</Button>
+                                    : <Link to="/Login">
+                                        <Button variant="outline-light">Login</Button>
+                                    </Link>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
