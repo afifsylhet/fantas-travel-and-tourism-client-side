@@ -10,6 +10,7 @@ import AddNewServices from './components/AddNewService/AddNewServices';
 import Login from './components/Login/Login';
 import AuthProvider from './utilities/AuthProvider';
 import PrivateRoute from './utilities/PrivateRoute';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
               <Login></Login>
             </Route>
           </Switch>
+          <Footer></Footer>
         </BrowserRouter >
       </AuthProvider>
     </div>

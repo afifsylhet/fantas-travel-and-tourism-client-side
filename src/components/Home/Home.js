@@ -2,6 +2,8 @@
 import './Home.css'
 import React from 'react';
 import Services from '../services/Services';
+import Reviews from '../Reviews/Reviews';
+import AtAGlance from '../atAGlance/AtAGlance';
 
 const Home = () => {
     return (
@@ -19,8 +21,17 @@ const Home = () => {
             </div>
             <br />
             <div className="bg-light">
-                <h1 className=" text-center p-2 text-success">Lets introduce your current package !!!</h1>
+                <h1 id="home1" className=" text-center p-2 text-success">Lets introduce your current package !!!</h1>
                 <Services></Services>
+            </div>
+            <br />
+            <div>
+                <h1 className=" text-center p-2 text-success">Our client is our motivation...</h1>
+                <Reviews></Reviews>
+            </div>
+            <div>
+                <h1 className=" text-center p-2 text-success">Fantasy Travel and Tourism At a Glance...</h1>
+                <AtAGlance></AtAGlance>
             </div>
         </div >
     );

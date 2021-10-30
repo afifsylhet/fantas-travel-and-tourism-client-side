@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../utilities/useAuth'
 
@@ -19,9 +20,14 @@ const Services = () => {
         const exists = services.find(pd => pd._id === product._id);
         exists.email = user.email;
         exists.status = "Painding";
+        // if (!exists.quantity) {
+        //     exists.quantity = 1;
+        // } else {
+        //     exists.quantity = exists.quantity + 1;
+        // }
         console.log(exists)
         fetch('http://localhost:5000/services/myOrder', {
-            method: 'POST',
+            method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(exists)
         })
@@ -43,10 +49,54 @@ const Services = () => {
                     services.map(service => {
 
                         return (
-                            <div className="row mt-4 shadow-lg p-2" key={service.ObjectId} >
+                            <div className="row mt-4 shadow p-2" key={service.ObjectId} >
 
                                 <div className="col-lg-5 col-md-12 col-xs-12">
-                                    <img src={service.img_1} alt="" className="img-fluid" />
+
+
+                                    <div>
+
+                                        <Carousel>
+                                            <Carousel.Item>
+                                                <img
+                                                    className="d-block w-100"
+                                                    src={service.img_1}
+                                                    alt="First slide"
+                                                />
+                                                <Carousel.Caption>
+                                                    <h3>{service.name}</h3>
+                                                </Carousel.Caption>
+                                            </Carousel.Item>
+                                            <Carousel.Item>
+                                                <img
+                                                    className="d-block w-100"
+                                                    src={service.img_2}
+                                                    alt="Second slide"
+                                                />
+
+                                                <Carousel.Caption>
+                                                    <h3>{service.name}</h3>
+                                                </Carousel.Caption>
+                                            </Carousel.Item>
+                                            <Carousel.Item>
+                                                <img
+                                                    className="d-block w-100"
+                                                    src={service.img_3}
+                                                    alt="Third slide"
+                                                />
+
+                                                <Carousel.Caption>
+                                                    <h3>{service.name}</h3>
+                                                </Carousel.Caption>
+                                            </Carousel.Item>
+                                        </Carousel>
+
+
+                                    </div>
+
+
+
+                                    {/* <img src={service.img_1} alt="" className="img-fluid" /> */}
                                 </div>
 
                                 <div className="col-lg-4 col-md-6 col-xs-12">
