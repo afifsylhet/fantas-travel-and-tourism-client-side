@@ -9,6 +9,7 @@ import ManageAllOrders from './components/ManageAllOders/ManageAllOders';
 import AddNewServices from './components/AddNewService/AddNewServices';
 import Login from './components/Login/Login';
 import AuthProvider from './utilities/AuthProvider';
+import PrivateRoute from './utilities/PrivateRoute';
 
 function App() {
   return (
@@ -26,15 +27,22 @@ function App() {
             <Route path="/about">
               <About></About>
             </Route>
-            <Route path="/myOrders/:id">
+
+            <PrivateRoute path="/myOrders/:id">
               <MyOrders></MyOrders>
-            </Route>
-            <Route path="/manageOrders">
+            </PrivateRoute>
+            <PrivateRoute path="/myOrders">
+              <MyOrders></MyOrders>
+            </PrivateRoute>
+
+            <PrivateRoute path="/manageOrders">
               <ManageAllOrders></ManageAllOrders>
-            </Route>
-            <Route path="/addNewServices">
+            </PrivateRoute>
+
+            <PrivateRoute path="/addNewServices">
               <AddNewServices></AddNewServices>
-            </Route>
+            </PrivateRoute>
+
             <Route path="/Login">
               <Login></Login>
             </Route>
