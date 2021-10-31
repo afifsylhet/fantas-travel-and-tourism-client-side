@@ -61,52 +61,52 @@ const AddNewServices = () => {
                     <form onSubmit={setToDatabase}>
                         <div className="mb-3">
                             <label for="exampleInputEmail1" className="form-label">Package Name</label>
-                            <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Type your package name" ref={nameRef} />
+                            <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Type your package name" ref={nameRef} required />
                         </div>
 
                         <div className="mb-3">
                             <label for="imgUrl1" className="form-label">Frist Image Url</label>
-                            <input type="text" className="form-control" id="imgUrl1" placeholder="Type your frist img url" ref={img_1Ref} />
+                            <input type="text" className="form-control" id="imgUrl1" placeholder="Type your frist img url" ref={img_1Ref} required />
                         </div>
                         <div className="mb-3">
                             <label for="imgUrl2" className="form-label">Second Image Url</label>
-                            <input type="text" className="form-control" id="imgUrl2" placeholder="Type your second img url" ref={img_2Ref} />
+                            <input type="text" className="form-control" id="imgUrl2" placeholder="Type your second img url" ref={img_2Ref} required />
                         </div>
                         <div className="mb-3">
                             <label for="imgUrl3" className="form-label">Third Image Url</label>
-                            <input type="text" className="form-control" id="imgUrl3" placeholder="Type your third img url" ref={img_3Ref} />
+                            <input type="text" className="form-control" id="imgUrl3" placeholder="Type your third img url" ref={img_3Ref} required />
                         </div>
 
                         <div className="mb-3">
                             <label for="duration" className="form-label">Duration</label>
-                            <input type="text" className="form-control" id="duration" placeholder="Type  package duration" ref={durationRef} />
+                            <input type="text" className="form-control" id="duration" placeholder="Type  package duration" ref={durationRef} required />
                         </div>
 
                         <div className="mb-3">
                             <label for="include1" className="form-label">This Package Include: </label>
-                            <input type="text" className="form-control" id="include1" placeholder="Type package include: food" ref={include_1Ref} />
+                            <input type="text" className="form-control" id="include1" placeholder="Type package include: food" ref={include_1Ref} required />
                         </div>
                         <div className="mb-3">
                             <label for="include2" className="form-label">This Package Include: </label>
-                            <input type="text" className="form-control" id="include2" placeholder="Type package include: Accomodation" ref={include_2Ref} />
+                            <input type="text" className="form-control" id="include2" placeholder="Type package include: Accomodation" ref={include_2Ref} required />
                         </div>
                         <div className="mb-3">
                             <label for="include3" className="form-label">This Package Include: </label>
-                            <input type="text" className="form-control" id="include3" placeholder="Type package include: Transport" ref={include_3Ref} />
+                            <input type="text" className="form-control" id="include3" placeholder="Type package include: Transport" ref={include_3Ref} required />
                         </div>
                         <div className="mb-3">
                             <label for="dis" className="form-label">A short discription about the package </label>
-                            <textarea type="text" className="form-control" id="dis" placeholder=" A short discription about your package" ref={disRef} />
+                            <textarea type="text" className="form-control" id="dis" placeholder=" A short discription about your package" ref={disRef} required />
                         </div>
 
                         <div className="mb-3">
                             <label for="price" className="form-label"> Price in USD </label>
-                            <input type="number" className="form-control" id="price" placeholder="Type  the package price" ref={priceRef} />
+                            <input type="number" className="form-control" id="price" placeholder="Type  the package price" ref={priceRef} required />
                         </div>
 
                         <div className="mb-3">
                             <label for="rating" className="form-label"> Total Rating Count </label>
-                            <input type="number" className="form-control" id="rating" placeholder="Type total rating count like 567" ref={rating_CountRef} />
+                            <input type="number" className="form-control" id="rating" placeholder="Type total rating count like 567" ref={rating_CountRef} required />
                         </div>
 
                         <input type="submit" value="Submit" className="btn btn-secondary" />
