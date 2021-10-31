@@ -23,8 +23,8 @@ const Header = () => {
                                 <Nav.Link href="#action2" className="text-white nevtour ">Home</Nav.Link>
                             </NavLink>
 
-                            <NavLink to="/about" className="nevuderline">
-                                <Nav.Link href="#action2" className="text-white nevtour">About</Nav.Link>
+                            <NavLink to="/contact" className="nevuderline">
+                                <Nav.Link href="#action2" className="text-white nevtour">Contact</Nav.Link>
                             </NavLink>
 
                             <NavLink to="/myOrders" className="nevuderline">

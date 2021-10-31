@@ -11,7 +11,7 @@ const MyOders = (props) => {
 
 
     useEffect(() => {
-        const url = "http://localhost:5000/services/myOrder";
+        const url = "https://young-beach-62796.herokuapp.com/services/myOrder";
         fetch(url)
             .then(res => res.json())
             .then(data => setServices(data))
@@ -21,24 +21,28 @@ const MyOders = (props) => {
 
     const removeUser = (product) => {
 
-        const exists = services.find(pd => pd._id === product._id);
-        console.log(exists)
-        fetch('http://localhost:5000/services/myOrder', {
-            method: 'delete',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(exists)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deleteCount) {
-                    alert("Your order removed")
-                }
+        var result = window.confirm("Want to delete?");
+        if (result) {
+            const exists = services.find(pd => pd._id === product._id);
+            console.log(exists)
+            fetch('https://young-beach-62796.herokuapp.com/services/myOrder', {
+                method: 'delete',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(exists)
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deleteCount) {
+                        alert("Your order removed")
+                    }
+                })
+        }
+
     }
 
     let totalbill = 0;
     for (const bill of yourData) {
-        const element = bill.price;
+        const element = parseInt(bill.price);
         totalbill = totalbill + element;
     }
 

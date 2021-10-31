@@ -3,7 +3,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
-import About from './components/About/About';
 import MyOrders from './components/MyOders/MyOders';
 import ManageAllOrders from './components/ManageAllOders/ManageAllOders';
 import AddNewServices from './components/AddNewService/AddNewServices';
@@ -11,6 +10,8 @@ import Login from './components/Login/Login';
 import AuthProvider from './utilities/AuthProvider';
 import PrivateRoute from './utilities/PrivateRoute';
 import Footer from './components/Footer/Footer';
+import Error from './components/Error/Error';
+import Contact from './components/About/Contact';
 
 function App() {
   return (
@@ -25,8 +26,8 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/about">
-              <About></About>
+            <Route path="/contact">
+              <Contact></Contact>
             </Route>
 
             <PrivateRoute path="/myOrders/:id">
@@ -46,6 +47,9 @@ function App() {
 
             <Route path="/Login">
               <Login></Login>
+            </Route>
+            <Route path="*">
+              <Error></Error>
             </Route>
           </Switch>
           <Footer></Footer>

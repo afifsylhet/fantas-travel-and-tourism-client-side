@@ -1,10 +1,16 @@
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faCopy } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../utilities/useAuth';
-
+import './Login.css'
 
 
 const Login = () => {
+    const element = <FontAwesomeIcon icon={faGoogle} />
+
+
     const { signInWithGoogle, setError, setUser, setIsLoading } = useAuth();
 
     const location = useLocation();
@@ -28,8 +34,13 @@ const Login = () => {
 
 
     return (
-        <div>
-            <button onClick={googleSignIn} className="btn btn-success"> Login With Google</button>
+        <div className="p-5 bg-light">
+            <div className="width mx-auto p-3 text-center shadow">
+                <span className="font-size text-muted ">{element}</span>
+                <hr />
+                <button onClick={googleSignIn} className="btn btn-secondary"> {element}  Click for google login</button>
+            </div>
+
         </div>
     );
 };

@@ -10,7 +10,7 @@ const Services = () => {
     const [services, setServices] = useState([])
 
     useEffect(() => {
-        const url = "http://localhost:5000/services";
+        const url = "https://young-beach-62796.herokuapp.com/services";
         fetch(url)
             .then(res => res.json())
             .then(data => setServices(data))
@@ -26,7 +26,7 @@ const Services = () => {
         //     exists.quantity = exists.quantity + 1;
         // }
         console.log(exists)
-        fetch('http://localhost:5000/services/myOrder', {
+        fetch('https://young-beach-62796.herokuapp.com/services/myOrder', {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(exists)
@@ -103,7 +103,7 @@ const Services = () => {
                                     <h3 className="text-success border border-success border-2 border-top-0 border-start-0 border-end-0 pb-2">{service.name}</h3>
 
                                     <h4 className="text-muted my-2">Duration : {service.duration}</h4>
-                                    <p className="fw-ligh my-2">{service.dis}</p>
+                                    <p className="fw-ligh my-2">{service.dis.slice(0, 280)}</p>
                                     <p>{service.name} package is one of the most attractive packages in our business. Travelers loved this package so many times. This package has a total of {service.rating_Count} reviews. On average to get a single review we need to sell at least 20 packages.   </p>
                                 </div>
 

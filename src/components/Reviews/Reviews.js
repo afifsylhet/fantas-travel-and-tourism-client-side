@@ -7,7 +7,7 @@ const Reviews = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        const url = "http://localhost:5000/services";
+        const url = "https://young-beach-62796.herokuapp.com/services";
         fetch(url)
             .then(res => res.json())
             .then(data => setServices(data))
